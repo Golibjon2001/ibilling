@@ -1,0 +1,98 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:ibilling/assets/colors/colors.dart';
+import 'package:ibilling/features/contracts/data/models/contract_model.dart';
+class Itemlist{
+
+}
+List item=  [
+  ContractModel(
+      date:DateTime.now(),
+      name: "Ziyoda",
+      id: 1,
+      salary: "1200 USD",
+      number: 26,
+      invoise: "3",
+      color:lightgreen,
+      text: "str_paid".tr()),
+  ContractModel(
+      date:DateTime.now(),
+      name: "Nigora",
+      id: 1,
+      salary: "1200 USD",
+      number: 26,
+      invoise: "3",
+      color:read,
+      text: "str_payme".tr()),
+  ContractModel(
+      date:DateTime.now(),
+      name: "Alexs",
+      id: 1,
+      salary: "1200 USD",
+      number: 26,
+      invoise: "3",
+      color:orange,
+      text: "str_paid".tr()),
+  ContractModel(
+      date:DateTime.now(),
+      name: "Asror",
+      id: 1,
+      salary: "2200 USD",
+      number: 26,
+      invoise: "3",
+      color:lightgreen,
+      text: "str_payme".tr()),
+  ContractModel(
+      date: DateTime.now(),
+      name: "Joni",
+      id: 1,
+      salary: "1200 USD",
+      number: 26,
+      invoise: "3",
+      color:read,
+      text: "str_rejected".tr()),
+  ContractModel(
+      date:DateTime.now(),
+      name: "Ilxom",
+      id: 1,
+      salary: "1200 USD",
+      number: 26,
+      invoise: "3",
+      color:orange,
+      text: "str_process".tr()),
+  ContractModel(
+      date:DateTime.now(),
+      name: "Ozod",
+      id: 1,
+      salary: "1200 USD",
+      number: 26,
+      invoise: "3",
+      color:orange,
+      text: "str_process".tr()),
+  ContractModel(
+      name: "Joni",
+      id: 1,
+      salary: "1200 USD",
+      number: 26,
+      invoise: "3",
+      color:read,
+      text: "str_rejected".tr(),
+      date:DateTime.now()),
+  ContractModel(
+      date:DateTime.now(),
+      name: "Alexs",
+      id: 1,
+      salary: "1200 USD",
+      number: 26,
+      invoise: "3",
+      color:lightgreen,
+      text: "str_payme".tr()),
+  ContractModel(
+      date:DateTime.now(),
+      name: "Ozod",
+      id: 1,
+      salary: "1200 USD",
+      number: 26,
+      invoise: "3",
+      color:orange,
+      text: "str_process".tr()),
+];
