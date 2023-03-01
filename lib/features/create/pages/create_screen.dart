@@ -6,6 +6,7 @@ import 'package:ibilling/features/contracts/pages/widgets/contract_list.dart';
 import 'package:ibilling/features/create/pages/widgets/create_info.dart';
 import 'package:ibilling/features/create/pages/widgets/create_infoown.dart';
 import 'package:ibilling/features/profile/pages/widgets/profile_appbar.dart';
+import 'package:ibilling/features/single/pages/single.dart';
 
 class CreateScreen extends StatefulWidget {
   int len = 0;
@@ -23,7 +24,12 @@ class _CreateScreenState extends State<CreateScreen> {
   final List items = item;
   bool icon = false;
   final itms = ['str_Physical'.tr(), 'str_Legal'.tr()];
-  final itm = ['str_paid'.tr(), 'str_process'.tr(), 'str_rejected'.tr(), 'str_payme'.tr()];
+  final itm = [
+    'str_paid'.tr(),
+    'str_process'.tr(),
+    'str_rejected'.tr(),
+    'str_payme'.tr()
+  ];
   final _name = TextEditingController();
 
   @override
@@ -88,7 +94,20 @@ class _CreateScreenState extends State<CreateScreen> {
                       date: DateTime.now(),
                       color: orange,
                       text: "In process");
-                  Navigator.pop(context, contract);
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ContractsSingle(
+                              model: contract,
+                            )),
+                  );
+                  // Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //       builder: (context) =>
+                  //           const ContractsSingle(),
+                  //     )
+                  // );
                 },
                 child: Container(
                   height: 44,
@@ -97,10 +116,10 @@ class _CreateScreenState extends State<CreateScreen> {
                     borderRadius: BorderRadius.circular(6),
                     color: darkgreen,
                   ),
-                  child:Center(
+                  child: Center(
                     child: Text(
                       "str_saveContract".tr(),
-                      style:const TextStyle(
+                      style: const TextStyle(
                           color: white,
                           fontWeight: FontWeight.w500,
                           fontSize: 16),

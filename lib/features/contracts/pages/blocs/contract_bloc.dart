@@ -150,7 +150,7 @@ class ContractBloc extends Bloc<ContractEvent, ContractState> {
     on<IncrementDate>((event, emit) {
       emit(state.copyWith(status: FormzStatus.submissionInProgress));
       print('call  IncrementDate event');
-      final date = state.initialDate.add(const Duration(days:7));
+      final date = state.initialDate.add(const Duration(days:6));
       emit(state.copyWith(
           initialDate: date, status: FormzStatus.submissionSuccess));
     });
@@ -158,7 +158,7 @@ class ContractBloc extends Bloc<ContractEvent, ContractState> {
     on<DecrementDate>((event, emit) {
       emit(state.copyWith(status: FormzStatus.submissionInProgress));
       print('call  IncrementDate event');
-      final date = state.initialDate.subtract(const Duration(days:7));
+      final date = state.initialDate.subtract(const Duration(days:6));
       emit(state.copyWith(
           initialDate: date, status: FormzStatus.submissionSuccess));
     });

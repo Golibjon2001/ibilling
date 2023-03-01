@@ -10,6 +10,7 @@ import 'package:ibilling/features/contracts/pages/widgets/contarct_app_bar.dart'
 import 'package:ibilling/features/contracts/pages/widgets/contract_empty.dart';
 import 'package:ibilling/features/contracts/pages/widgets/contract_item.dart';
 import 'package:intl/intl.dart';
+import 'package:jiffy/jiffy.dart';
 
 class HistoryScreen extends StatefulWidget {
   const HistoryScreen({Key? key}) : super(key: key);
@@ -37,7 +38,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
         lastDate:DateTime.now()
     ).then((piscedDate)  {
       if(piscedDate==null){return;}
-      selectedData=DateFormat.yMd().format(piscedDate);
+      selectedData=Jiffy(piscedDate).format('dd.MM.yyyy')/*DateFormat.yMd().format(piscedDate)*/;
       setState(() {
 
       });
@@ -51,7 +52,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
         lastDate:DateTime.now()
     ).then((piscedDate)  {
       if(piscedDate==null){return;}
-      selectedDatatwo=DateFormat.yMd().format(piscedDate);
+      selectedDatatwo=Jiffy(piscedDate).format('dd.MM.yyyy')/*DateFormat.yMd().format(piscedDate)*/;
       setState(() {
 
       });
@@ -94,7 +95,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                             },
                             child: Container(
                               padding:const EdgeInsets.only(left:15,right:15),
-                              width:116,
+                              width:118,
                               height:37,
                               decoration:BoxDecoration(
                                 color:dark,
@@ -122,7 +123,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                             },
                             child: Container(
                               padding:const EdgeInsets.only(left:15,right:15),
-                              width:116,
+                              width:118,
                               height:37,
                               decoration:BoxDecoration(
                                 color:dark,

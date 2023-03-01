@@ -5,8 +5,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:ibilling/assets/colors/colors.dart';
 import 'package:ibilling/assets/icons/app_icons.dart';
+import 'package:ibilling/features/contracts/data/models/contract_model.dart';
 import 'package:ibilling/features/contracts/pages/blocs/contract_bloc.dart';
 import 'package:ibilling/features/contracts/pages/contracts_filters.dart';
+import 'package:ibilling/features/contracts/pages/widgets/contract_list.dart';
 import 'package:ibilling/features/single/pages/single.dart';
 import 'package:ibilling/features/contracts/pages/widgets/contarct_app_bar.dart';
 import 'package:ibilling/features/contracts/pages/widgets/contract_calendar.dart';
@@ -22,6 +24,8 @@ class ContractsScreen extends StatefulWidget {
 }
 
 class _ContractsScreenState extends State<ContractsScreen> {
+  late ContractModel contractModel;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

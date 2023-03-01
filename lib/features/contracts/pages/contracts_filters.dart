@@ -11,6 +11,7 @@ import 'package:ibilling/features/contracts/pages/widgets/contract_filter_button
 import 'package:ibilling/features/contracts/pages/widgets/contract_item.dart';
 import 'package:ibilling/features/contracts/pages/widgets/contract_status.dart';
 import 'package:intl/intl.dart';
+import 'package:jiffy/jiffy.dart';
 
 class ContractsFilter extends StatefulWidget {
   const ContractsFilter({Key? key}) : super(key: key);
@@ -59,7 +60,7 @@ class _ContractsFilterState extends State<ContractsFilter> {
   }
 
   String? formatDate(DateTime? selectDate) {
-    return DateFormat.yMd().format(selectDate!);
+    return Jiffy(selectDate).format('dd.MM.yyyy')/*DateFormat.yMd().format(selectDate!)*/;
   }
 
   @override
@@ -117,7 +118,7 @@ class _ContractsFilterState extends State<ContractsFilter> {
                             child: Container(
                               padding:
                                   const EdgeInsets.only(left: 15, right: 15),
-                              width: 116,
+                              width: 118,
                               height: 37,
                               decoration: BoxDecoration(
                                 color: dark,
@@ -156,7 +157,7 @@ class _ContractsFilterState extends State<ContractsFilter> {
                             child: Container(
                               padding:
                                   const EdgeInsets.only(left: 15, right: 15),
-                              width: 116,
+                              width: 118,
                               height: 37,
                               decoration: BoxDecoration(
                                 color: dark,

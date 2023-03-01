@@ -37,6 +37,7 @@ class _SelectDialogState extends State<SelectDialog> {
 
   @override
   Widget build(BuildContext context) {
+    double size=MediaQuery.of(context).size.width*0.30;
     return AlertDialog(
       backgroundColor: dark,
       content: SizedBox(
@@ -167,6 +168,7 @@ class _SelectDialogState extends State<SelectDialog> {
               height: 36,
             ),
             Row(
+              mainAxisAlignment:MainAxisAlignment.spaceBetween,
               children: [
                 InkWell(
                   onTap: () {
@@ -174,7 +176,7 @@ class _SelectDialogState extends State<SelectDialog> {
                   },
                   child: Container(
                     height: 37,
-                    width: 125,
+                    width:size,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6),
                       color: darkgreen.withOpacity(0.3),
@@ -187,9 +189,6 @@ class _SelectDialogState extends State<SelectDialog> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  width: 10,
-                ),
                 InkWell(
                   onTap: () {
                     selectLanguage();
@@ -197,7 +196,7 @@ class _SelectDialogState extends State<SelectDialog> {
                   },
                   child: Container(
                     height: 37,
-                    width: 125,
+                    width: size,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6),
                       color: darkgreen,

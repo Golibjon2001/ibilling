@@ -13,7 +13,8 @@ import 'package:jiffy/jiffy.dart';
 
 class ContractsSingle extends StatefulWidget {
   static const String id="single";
-  const ContractsSingle({Key? key}) : super(key: key);
+  final ContractModel? model;
+  const ContractsSingle({Key? key,   this.model,}) : super(key: key);
 
   @override
   State<ContractsSingle> createState() => _ContractsSingleState();
@@ -26,7 +27,12 @@ class _ContractsSingleState extends State<ContractsSingle> {
   @override
   void initState() {
     super.initState();
-    itemshow = List.filled(items.length, false); // 5
+
+    if(widget.model != null){
+      items.add(widget.model);
+    }
+
+    itemshow = List.filled(items.length, false);
   }
 
   @override
@@ -203,20 +209,15 @@ class _ContractsSingleState extends State<ContractsSingle> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                           CreateScreen(items.length),
+                                           CreateScreen(items.length,),
                                   )
                               ).then((value) {
                                 if(value==null){
                                 }else{
                                   final model=value as ContractModel;
                                   items.add(model);
-
                                   setState(() {});
-
                                  itemshow =  List.filled(items.length, false);
-
-                                  print(items.length);
-                                  print(itemshow.length);
                                 }
                                 setState(() {});
                               });
@@ -242,7 +243,7 @@ class _ContractsSingleState extends State<ContractsSingle> {
                         height: 20,
                       ),
                       const Text(
-                        "Other contracts with\n Yoldosheva Feruza",
+                        "Other contracts with\nYuldasheva Feruza",
                         style: TextStyle(
                             color: white,
                             fontSize: 16,
